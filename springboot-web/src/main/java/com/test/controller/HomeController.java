@@ -12,7 +12,7 @@ public class HomeController {
     @ResponseBody
     public String hello(){
         System.out.println("hello world");
-        System.out.println("welcome");
+        System.out.println("welcome从 ");
         return "hello world";
     }
 
