@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "hello", method = RequestMethod.GET)
-    @ResponseBody
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    @ResponseBody
     public String hello(){
         System.out.println("hello world");
         System.out.println("welcome从 ");
         System.out.println("test");
-        return "hello world";
+        return "home";
     }
 
 }
