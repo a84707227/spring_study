@@ -13,6 +13,7 @@ public class HomeController {
     public String hello(){
         System.out.println("hello world");
         System.out.println("welcome从 ");
+        System.out.println("test");
         return "hello world";
     }
 
