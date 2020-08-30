@@ -3,9 +3,11 @@ package com.test.controller;
 import com.test.pojo.Home;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -45,7 +47,11 @@ public class HomeController {
     @ResponseBody
     public Object saveHome(@Valid Home home, Errors errors){
         if (errors.hasErrors()){
-            System.out.println("错误内容："+errors.getFieldErrors());
+//            System.out.println("错误内容："+errors.getFieldErrors());
+            List<FieldError> fieldErrors = errors.getFieldErrors();
+            for (FieldError fe : fieldErrors){
+                System.out.println(fe.getField() + ":" + fe.getDefaultMessage());
+            }
             return errors;
         }
         System.out.println(home);
